@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: c6db5b8e482814020945e484e6884258
+labels:
+- Cloud
+- Save
+- Serialize
+- Serialise
+- Icloud
+- Google
+- Googleplay
+- Googleplayservices
+- Native
+- Plugins
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

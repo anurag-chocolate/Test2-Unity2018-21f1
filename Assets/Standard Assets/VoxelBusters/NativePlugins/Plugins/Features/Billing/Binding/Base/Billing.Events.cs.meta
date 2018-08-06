@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 69548a76857d64be39cc588557e9a67d
+labels:
+- Billing
+- IAP
+- Purchase
+- Purchases
+- Inapp
+- Inapppurchases
+- Buy
+- Freemium
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

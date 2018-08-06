@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 1847e2c046afe4147a581a798497ae78
+labels:
+- Media
+- Plugins
+- Imagepicker
+- Gallery
+- Photo
+- Photopicker
+- Picker
+- Screenshot
+- Youtube
+- Vimeo
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

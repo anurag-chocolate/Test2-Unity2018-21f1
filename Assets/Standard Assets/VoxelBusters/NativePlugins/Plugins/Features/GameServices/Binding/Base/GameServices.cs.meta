@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: baff5c7030ba546bc8c3c2a6f842edfc
+labels:
+- Leaderboards
+- Achievements
+- Game
+- Top
+- Topscores
+- Scores
+- Gallery
+- PlayServices
+- GameCenter
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

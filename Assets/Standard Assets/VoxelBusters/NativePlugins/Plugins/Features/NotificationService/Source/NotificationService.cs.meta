@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 0591a5db33b4c418cb00d268f681acf8
+labels:
+- Notification
+- PushNotification
+- Local
+- LocalNotification
+- Push
+- Remote
+- Notifications
+- Onesignal
+- Signal
+- Schedule
+- GCM
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

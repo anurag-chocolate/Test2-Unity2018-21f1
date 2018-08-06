@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: d8765dab7bb6d4c7db7a62d76c736165
+labels:
+- IAP
+- Purchase
+- Inapp
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

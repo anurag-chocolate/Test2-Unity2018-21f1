@@ -1,0 +1,154 @@
+// kkawai
+ext {
+    googlePlayServicesVersion = '11.0.4'
+    supportLibraryVersion = '26.0.1'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
+}
+
+allprojects {
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+        jcenter()
+        google()
+        maven { url 'https://maven.google.com' }
+    }
+}
+
+repositories {
+    maven { url 'https://jitpack.io' }
+    maven { url "https://adcolony.bintray.com/AdColony" }
+    maven { url "https://dl.bintray.com/vdopiacorp/sdk" }
+    maven { url "http://repository.youappi.com/repository/release" }
+    // If you're using a version of Gradle greater than or equal to 4.1, you must use:
+    google()
+
+    // If you're using a version of Gradle lower than 4.1, you must use:
+    maven { url 'https://maven.google.com' }
+
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion("$rootProject.ext.supportLibraryVersion")
+            }
+        }
+    }
+}
+
+apply plugin: 'com.android.application'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation("com.vdopia.ads.lw:unity-plugin:1.1.6")
+
+    implementation("com.vdopia.ads.lw:coresdk:2.5.5.1")
+    implementation("com.vdopia.ads.lw:adcolony-adapter:1.0.8")
+    implementation("com.vdopia.ads.lw:applovin-adapter:1.0.9")
+    //implementation("com.vdopia.ads.lw:baidu-adapter:1.0.6")
+    implementation("com.vdopia.ads.lw:chartboost-adapter:1.0.8")
+    implementation("com.vdopia.ads.lw:facebook-adapter:1.0.6")
+    implementation("com.vdopia.ads.lw:google-adapter:1.1.0")
+    implementation("com.vdopia.ads.lw:inmobi-adapter:1.0.9")
+    implementation("com.vdopia.ads.lw:mopub-adapter:1.0.9")
+    implementation("com.vdopia.ads.lw:ogury-adapter:1.0.5")
+    //implementation("com.vdopia.ads.lw:youappi-adapter:1.0.7")
+    implementation("com.vdopia.ads.lw:tapjoy-adapter:1.0.6")
+    implementation("com.vdopia.ads.lw:unity-adapter:1.1.0")
+    implementation("com.vdopia.ads.lw:vungle-adapter:1.0.6")
+    //implementation("com.vdopia.ads.lw:yahoo-adapter:1.0.8")
+
+    implementation ('com.github.vungle:vungle-android-sdk:6.2.15')
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.devbrackets.android:exomedia:4.0.3'
+    implementation 'com.adcolony:sdk:3.3.5'
+    implementation 'com.inmobi.monetization:inmobi-ads:7.1.0'
+    implementation 'com.applovin:applovin-sdk:8.0.0'
+    //implementation 'com.flurry.android:ads:10.0.0'
+    implementation 'com.google.ads.interactivemedia.v3:interactivemedia:3.7.4'
+    //implementation "com.youappi.sdk:youappi-sdk-android-moat:4.2.1"
+    implementation('com.mopub:mopub-sdk:4.19.0@aar') {
+        transitive = true
+        exclude module: 'libAvid-mopub'
+        exclude module: 'moat-mobile-app-kit'
+    }
+    implementation('com.facebook.android:audience-network-sdk:4.+') {
+        exclude group: 'com.google.android.exoplayer'
+    }
+
+    //google support and google play services libraries
+    implementation "com.google.android.gms:play-services-ads:$rootProject.ext.googlePlayServicesVersion"
+    implementation "com.google.android.gms:play-services-gcm:$rootProject.ext.googlePlayServicesVersion"
+    implementation "com.google.android.gms:play-services-games:$rootProject.ext.googlePlayServicesVersion"
+    implementation "com.google.android.gms:play-services-base:$rootProject.ext.googlePlayServicesVersion"
+    implementation "com.google.android.gms:play-services-basement:$rootProject.ext.googlePlayServicesVersion"
+    implementation "com.google.android.gms:play-services-drive:$rootProject.ext.googlePlayServicesVersion"
+    implementation "com.google.android.gms:play-services-iid:$rootProject.ext.googlePlayServicesVersion"
+    implementation "com.google.android.gms:play-services-nearby:$rootProject.ext.googlePlayServicesVersion"
+    implementation "com.google.android.gms:play-services-tasks:$rootProject.ext.googlePlayServicesVersion"
+
+    implementation "com.android.support:support-annotations:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:palette-v7:$rootProject.ext.supportLibraryVersion"
+    implementation 'com.android.support:multidex:1.0.3'
+
+**DEPS**}
+
+android {
+    compileSdkVersion **APIVERSION**
+    buildToolsVersion '**BUILDTOOLS**'
+
+    defaultConfig {
+        minSdkVersion **MINSDKVERSION**
+        targetSdkVersion **TARGETSDKVERSION**
+        applicationId '**APPLICATIONID**'
+        ndk {
+            abiFilters **ABIFILTERS**
+        }
+        versionCode **VERSIONCODE**
+        versionName '**VERSIONNAME**'
+        multiDexEnabled true
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+        noCompress '.unity3d', '.ress', '.resource', '.obb'**STREAMING_ASSETS**
+    }**SIGN**
+
+    buildTypes {
+        debug {
+            minifyEnabled **MINIFY_DEBUG**
+            useProguard **PROGUARD_DEBUG**
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'**USER_PROGUARD**
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled **MINIFY_RELEASE**
+            useProguard **PROGUARD_RELEASE**
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'**USER_PROGUARD****SIGNCONFIG**
+        }
+    }**PACKAGING_OPTIONS****SPLITS**
+**BUILT_APK_LOCATION**
+}**SPLITS_VERSION_CODE****SOURCE_BUILD_SETUP**
